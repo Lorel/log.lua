@@ -43,7 +43,7 @@ local tostring = function(...)
   local t = {}
   for i = 1, select('#', ...) do
     local x = select(i, ...)
-    if type(x) == "number" then
+    if type(x) == "number" and math.type(x) == "float" then
       x = round(x, .01)
     end
     t[#t + 1] = _tostring(x)

@@ -29,6 +29,9 @@ for i, v in ipairs(modes) do
   levels[v.name] = i
 end
 
+function log.is_enabled(level)
+  return not(levels[level] < levels[log.level])  
+end
 
 local round = function(x, increment)
   increment = increment or 1
